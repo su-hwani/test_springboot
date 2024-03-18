@@ -1,8 +1,6 @@
 package com.example.demo.dto;
 
 import com.example.demo.model.UserEntity;
-import com.example.demo.model.UserEntity.UserEntityBuilder;
-
 import jakarta.validation.constraints.*;
 import lombok.*;
 
@@ -15,6 +13,7 @@ public class UserCreateRequestDto {
     @NotEmpty(message = "Name is required")
     private String name;
 
+    @Positive(message = "Age is up to 0")
     @NotNull(message = "Age is required")
     private Integer age;
 
