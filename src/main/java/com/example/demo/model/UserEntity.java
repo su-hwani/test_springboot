@@ -1,5 +1,6 @@
 package com.example.demo.model;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 import jakarta.persistence.Entity;
@@ -32,6 +33,10 @@ public class UserEntity {
 
     @NotNull
     private String email;
+
+    private BigDecimal latitude;
+
+    private BigDecimal longitude;
 
     @NotNull
     private Date createdAt;

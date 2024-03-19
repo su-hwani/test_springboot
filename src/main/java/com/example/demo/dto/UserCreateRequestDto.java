@@ -1,5 +1,7 @@
 package com.example.demo.dto;
 
+import java.math.BigDecimal;
+
 import com.example.demo.model.UserEntity;
 import jakarta.validation.constraints.*;
 import lombok.*;
@@ -21,8 +23,11 @@ public class UserCreateRequestDto {
     @NotEmpty(message = "Email is required")
     private String email;
 
-    // 기본 생성자, getter 및 setter 생략
+    private BigDecimal latitude;
+
+    private BigDecimal longitude;
+
     public UserEntity toEntity(){
-        return UserEntity.builder().name(name).age(age).email(email).build();
+        return UserEntity.builder().name(name).age(age).email(email).latitude(latitude).longitude(longitude).build();
     }
 }
